@@ -9,9 +9,7 @@ class Project < ApplicationRecord
 		return 'not-started' if tasks.none?
 		if tasks.all? { |task| task.complete? }
 			'completed'
-		elsif tasks.any? { |task| task.complete?}
-			'in-progress'
-		elsif tasks.any? { |task| task.in_progress?}
+		elsif tasks.any? { |task| task.in_progress? || task.complete? }
 			'in-progress'
 		else
 			"not-started"
