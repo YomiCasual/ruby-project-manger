@@ -1,0 +1,35 @@
+<div id="<%= dom_id project %>">
+<div class="flex gap-2 items-center mt-2 text-xs">
+<p class="badge-<%= project.badge_color %>">
+            <%= project.status %>
+          </p>
+
+		  <p><%= project.percent_complete%>% complete</p>
+		  <p class="text-gray-500">(<%= project.tasks.select { |task| task.complete? }.count %>/<%= project.tasks.count %>)</p>
+		   
+	
+</div>
+
+
+  <p class="my-5">
+
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= project.description %>
+  </p>
+
+  <p class="my-5"> 
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= project.user_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this project", project_path(project), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this project', edit_project_path(project), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer;
+  }
+
+  .btn-sec {
+    @apply btn-primary bg-gray-100 text-black;
+  }
+  .btn-success {
+    @apply btn-primary bg-green-500;
+  }
+  .btn-danger {
+    @apply btn-primary bg-green-500;
+  }
+
+  .input-field {
+    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
+  }
+  .input-field-sec {
+    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full;
+  }
+
+  .badge {
+    @apply bg-gray-800 px-2 py-1 rounded-md text-xs inline-block !text-white;
+  }
+
+  .badge-primary {
+    @apply badge bg-blue-500;
+  }
+  .badge-secondary {
+    @apply badge bg-green-500;
+  }
+  .badge-danger {
+    @apply badge bg-red-500;
+  }
+}

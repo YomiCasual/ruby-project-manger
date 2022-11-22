@@ -1,0 +1,24 @@
+<div class="mx-auto w-full">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <% if @task.persisted? %>
+      <div class="border-b mb-4">
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Name:</strong>
+          <%= @task.name %>
+        </p>
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Description:</strong>
+          <%= @task.description %>
+        </p>
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Project:</strong>
+          <%= @task.project_id %>
+        </p>
+      </div>
+    <% end %>
+    <%= link_to 'Back to tasks', project_path(:id => @task.project_id), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>
